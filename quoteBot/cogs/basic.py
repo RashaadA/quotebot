@@ -14,12 +14,12 @@ class Basic(commands.Cog):
 
     @commands.command()
     async def help(self, ctx):
-        await ctx.channel.send("Use the dq function followed by a string of text to generate a quote of everyone's least favorite QHSSer. Write mq followed by text for Morgan Freeman. The random function will generate a random quote by either one of the two.")
+        await ctx.channel.send("Use the dq function followed by a string of text to generate a quote of e. Write mq followed by text for Morgan Freeman. The random function will generate a random quote by either one of the two.")
 
-
+    #generates a quote of a friend of mine, information redacted for privacy purposes
     @commands.command()
     async def dq(self, ctx, mystr:str):
-        image = Image.open("pictures/dantepic.png")
+        image = Image.open("pictures/epic.png")
         font = ImageFont.truetype("arial.ttf", 80)
         cx, cy = (2150,800)
 
@@ -32,13 +32,13 @@ class Basic(commands.Cog):
             draw = ImageDraw.Draw(image)
             width, height = font.getsize(line)
             draw.text((cx-(width/2),y_text), line, font=font, fill=(0,0,0))
-            image.save("dantepicture.png")
+            image.save("epicture.png")
             y_text += height
 
-        draw.text((1800,1400), "—— Dante Cedo ——", font=font, fill=(0,0,0))
-        image.save("dantepicture.png")
+        draw.text((1800,1400), "—— e ——", font=font, fill=(0,0,0))
+        image.save("epicture.png")
 
-        with open("dantepicture.png", "rb") as f:
+        with open("epicture.png", "rb") as f:
             image = nextcord.File(f)
             await ctx.channel.send(file=image)
 
